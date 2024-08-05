@@ -5,10 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
     public Transform target; 
     public float smoothing; 
-    
     public Vector2 minPosition;
     public Vector2 maxPosition;
-    
+    public ColorBlindFilter Filter;
+
+    void Start() {
+        Filter = GetComponent<ColorBlindFilter>();
+    }
+
     void LateUpdate() {
         if (transform.position != target.position) {
 
